@@ -1,0 +1,466 @@
+﻿outer_fold,group,category,role,images
+0,a_1,Sketch,train,52
+0,a_10,Sketch,train,23
+0,a_11,Sketch,test,10
+0,a_12,Sketch,test,37
+0,a_13,Sketch,train,9
+0,a_14,Sketch,test,45
+0,a_15,Sketch,val,20
+0,a_16,Sketch,train,16
+0,a_18,Sketch,val,38
+0,a_19,Sketch,train,13
+0,a_2,Sketch,test,25
+0,a_20,Sketch,train,29
+0,a_21,Sketch,train,21
+0,a_22,Sketch,test,20
+0,a_23,Sketch,train,10
+0,a_24,Sketch,train,10
+0,a_25,Sketch,val,37
+0,a_26,Sketch,train,53
+0,a_27,Sketch,val,62
+0,a_28,Sketch,train,55
+0,a_29,Sketch,train,63
+0,a_3,Sketch,train,14
+0,a_31,Sketch,train,35
+0,a_33,Sketch,train,71
+0,a_34,Sketch,test,72
+0,a_35,Sketch,train,56
+0,a_36,Sketch,train,9
+0,a_4,Sketch,train,54
+0,a_5,Sketch,train,12
+0,a_6,Sketch,train,10
+0,a_7,Sketch,train,27
+0,a_8,Sketch,train,20
+0,a_9,Sketch,train,38
+0,b_1,Quick Sketch,train,41
+0,b_10,Quick Sketch,test,35
+0,b_11,Quick Sketch,test,27
+0,b_12,Quick Sketch,train,21
+0,b_13,Quick Sketch,train,29
+0,b_14,Quick Sketch,train,20
+0,b_15,Quick Sketch,train,12
+0,b_16,Quick Sketch,train,6
+0,b_17,Quick Sketch,test,20
+0,b_18,Quick Sketch,val,28
+0,b_19,Quick Sketch,train,13
+0,b_2,Quick Sketch,val,18
+0,b_20,Quick Sketch,test,49
+0,b_21,Quick Sketch,train,69
+0,b_22,Quick Sketch,train,51
+0,b_23,Quick Sketch,val,72
+0,b_24,Quick Sketch,train,64
+0,b_25,Quick Sketch,train,35
+0,b_26,Quick Sketch,train,36
+0,b_27,Quick Sketch,train,63
+0,b_28,Quick Sketch,test,72
+0,b_29,Quick Sketch,train,72
+0,b_3,Quick Sketch,train,24
+0,b_4,Quick Sketch,val,20
+0,b_5,Quick Sketch,train,20
+0,b_6,Quick Sketch,train,53
+0,b_7,Quick Sketch,train,35
+0,b_8,Quick Sketch,train,20
+0,b_9,Quick Sketch,train,20
+0,c_1,Color,val,49
+0,c_10,Color,train,19
+0,c_11,Color,train,75
+0,c_12,Color,train,27
+0,c_13,Color,train,12
+0,c_14,Color,test,26
+0,c_15,Color,train,20
+0,c_16,Color,test,28
+0,c_17,Color,train,19
+0,c_18,Color,train,20
+0,c_19,Color,train,10
+0,c_2,Color,test,13
+0,c_20,Color,val,30
+0,c_21,Color,train,41
+0,c_22,Color,train,25
+0,c_23,Color,train,52
+0,c_24,Color,val,47
+0,c_25,Color,train,70
+0,c_26,Color,train,73
+0,c_27,Color,train,70
+0,c_28,Color,train,35
+0,c_29,Color,train,27
+0,c_3,Color,test,7
+0,c_30,Color,train,68
+0,c_31,Color,train,50
+0,c_32,Color,train,71
+0,c_4,Color,train,32
+0,c_5,Color,val,20
+0,c_7,Color,train,35
+0,c_8,Color,test,132
+0,c_9,Color,test,46
+1,a_1,Sketch,test,52
+1,a_10,Sketch,train,23
+1,a_11,Sketch,train,10
+1,a_12,Sketch,train,37
+1,a_13,Sketch,train,9
+1,a_14,Sketch,train,45
+1,a_15,Sketch,train,20
+1,a_16,Sketch,test,16
+1,a_18,Sketch,train,38
+1,a_19,Sketch,train,13
+1,a_2,Sketch,val,25
+1,a_20,Sketch,train,29
+1,a_21,Sketch,test,21
+1,a_22,Sketch,val,20
+1,a_23,Sketch,test,10
+1,a_24,Sketch,train,10
+1,a_25,Sketch,train,37
+1,a_26,Sketch,train,53
+1,a_27,Sketch,train,62
+1,a_28,Sketch,train,55
+1,a_29,Sketch,train,63
+1,a_3,Sketch,val,14
+1,a_31,Sketch,test,35
+1,a_33,Sketch,test,71
+1,a_34,Sketch,val,72
+1,a_35,Sketch,train,56
+1,a_36,Sketch,train,9
+1,a_4,Sketch,train,54
+1,a_5,Sketch,test,12
+1,a_6,Sketch,train,10
+1,a_7,Sketch,train,27
+1,a_8,Sketch,train,20
+1,a_9,Sketch,train,38
+1,b_1,Quick Sketch,train,41
+1,b_10,Quick Sketch,train,35
+1,b_11,Quick Sketch,val,27
+1,b_12,Quick Sketch,train,21
+1,b_13,Quick Sketch,test,29
+1,b_14,Quick Sketch,train,20
+1,b_15,Quick Sketch,train,12
+1,b_16,Quick Sketch,test,6
+1,b_17,Quick Sketch,train,20
+1,b_18,Quick Sketch,val,28
+1,b_19,Quick Sketch,train,13
+1,b_2,Quick Sketch,val,18
+1,b_20,Quick Sketch,train,49
+1,b_21,Quick Sketch,train,69
+1,b_22,Quick Sketch,train,51
+1,b_23,Quick Sketch,train,72
+1,b_24,Quick Sketch,test,64
+1,b_25,Quick Sketch,train,35
+1,b_26,Quick Sketch,train,36
+1,b_27,Quick Sketch,test,63
+1,b_28,Quick Sketch,train,72
+1,b_29,Quick Sketch,train,72
+1,b_3,Quick Sketch,test,24
+1,b_4,Quick Sketch,train,20
+1,b_5,Quick Sketch,train,20
+1,b_6,Quick Sketch,train,53
+1,b_7,Quick Sketch,train,35
+1,b_8,Quick Sketch,train,20
+1,b_9,Quick Sketch,test,20
+1,c_1,Color,train,49
+1,c_10,Color,train,19
+1,c_11,Color,train,75
+1,c_12,Color,train,27
+1,c_13,Color,train,12
+1,c_14,Color,train,26
+1,c_15,Color,train,20
+1,c_16,Color,train,28
+1,c_17,Color,train,19
+1,c_18,Color,test,20
+1,c_19,Color,train,10
+1,c_2,Color,train,13
+1,c_20,Color,train,30
+1,c_21,Color,val,41
+1,c_22,Color,train,25
+1,c_23,Color,test,52
+1,c_24,Color,test,47
+1,c_25,Color,val,70
+1,c_26,Color,test,73
+1,c_27,Color,train,70
+1,c_28,Color,test,35
+1,c_29,Color,train,27
+1,c_3,Color,train,7
+1,c_30,Color,train,68
+1,c_31,Color,train,50
+1,c_32,Color,train,71
+1,c_4,Color,train,32
+1,c_5,Color,test,20
+1,c_7,Color,val,35
+1,c_8,Color,val,132
+1,c_9,Color,train,46
+2,a_1,Sketch,val,52
+2,a_10,Sketch,test,23
+2,a_11,Sketch,train,10
+2,a_12,Sketch,train,37
+2,a_13,Sketch,train,9
+2,a_14,Sketch,train,45
+2,a_15,Sketch,train,20
+2,a_16,Sketch,train,16
+2,a_18,Sketch,test,38
+2,a_19,Sketch,train,13
+2,a_2,Sketch,train,25
+2,a_20,Sketch,train,29
+2,a_21,Sketch,val,21
+2,a_22,Sketch,train,20
+2,a_23,Sketch,train,10
+2,a_24,Sketch,val,10
+2,a_25,Sketch,val,37
+2,a_26,Sketch,test,53
+2,a_27,Sketch,train,62
+2,a_28,Sketch,train,55
+2,a_29,Sketch,test,63
+2,a_3,Sketch,train,14
+2,a_31,Sketch,train,35
+2,a_33,Sketch,train,71
+2,a_34,Sketch,train,72
+2,a_35,Sketch,train,56
+2,a_36,Sketch,test,9
+2,a_4,Sketch,train,54
+2,a_5,Sketch,train,12
+2,a_6,Sketch,test,10
+2,a_7,Sketch,train,27
+2,a_8,Sketch,test,20
+2,a_9,Sketch,train,38
+2,b_1,Quick Sketch,test,41
+2,b_10,Quick Sketch,train,35
+2,b_11,Quick Sketch,train,27
+2,b_12,Quick Sketch,train,21
+2,b_13,Quick Sketch,train,29
+2,b_14,Quick Sketch,train,20
+2,b_15,Quick Sketch,train,12
+2,b_16,Quick Sketch,train,6
+2,b_17,Quick Sketch,train,20
+2,b_18,Quick Sketch,test,28
+2,b_19,Quick Sketch,train,13
+2,b_2,Quick Sketch,test,18
+2,b_20,Quick Sketch,val,49
+2,b_21,Quick Sketch,train,69
+2,b_22,Quick Sketch,train,51
+2,b_23,Quick Sketch,test,72
+2,b_24,Quick Sketch,train,64
+2,b_25,Quick Sketch,train,35
+2,b_26,Quick Sketch,test,36
+2,b_27,Quick Sketch,val,63
+2,b_28,Quick Sketch,train,72
+2,b_29,Quick Sketch,train,72
+2,b_3,Quick Sketch,train,24
+2,b_4,Quick Sketch,test,20
+2,b_5,Quick Sketch,train,20
+2,b_6,Quick Sketch,train,53
+2,b_7,Quick Sketch,train,35
+2,b_8,Quick Sketch,val,20
+2,b_9,Quick Sketch,train,20
+2,c_1,Color,train,49
+2,c_10,Color,train,19
+2,c_11,Color,val,75
+2,c_12,Color,test,27
+2,c_13,Color,test,12
+2,c_14,Color,train,26
+2,c_15,Color,train,20
+2,c_16,Color,train,28
+2,c_17,Color,train,19
+2,c_18,Color,train,20
+2,c_19,Color,test,10
+2,c_2,Color,train,13
+2,c_20,Color,test,30
+2,c_21,Color,train,41
+2,c_22,Color,val,25
+2,c_23,Color,val,52
+2,c_24,Color,train,47
+2,c_25,Color,test,70
+2,c_26,Color,train,73
+2,c_27,Color,test,70
+2,c_28,Color,train,35
+2,c_29,Color,val,27
+2,c_3,Color,train,7
+2,c_30,Color,train,68
+2,c_31,Color,train,50
+2,c_32,Color,train,71
+2,c_4,Color,train,32
+2,c_5,Color,train,20
+2,c_7,Color,test,35
+2,c_8,Color,train,132
+2,c_9,Color,train,46
+3,a_1,Sketch,train,52
+3,a_10,Sketch,train,23
+3,a_11,Sketch,train,10
+3,a_12,Sketch,val,37
+3,a_13,Sketch,test,9
+3,a_14,Sketch,train,45
+3,a_15,Sketch,train,20
+3,a_16,Sketch,train,16
+3,a_18,Sketch,train,38
+3,a_19,Sketch,test,13
+3,a_2,Sketch,train,25
+3,a_20,Sketch,val,29
+3,a_21,Sketch,val,21
+3,a_22,Sketch,train,20
+3,a_23,Sketch,train,10
+3,a_24,Sketch,train,10
+3,a_25,Sketch,test,37
+3,a_26,Sketch,train,53
+3,a_27,Sketch,test,62
+3,a_28,Sketch,train,55
+3,a_29,Sketch,train,63
+3,a_3,Sketch,test,14
+3,a_31,Sketch,train,35
+3,a_33,Sketch,train,71
+3,a_34,Sketch,train,72
+3,a_35,Sketch,train,56
+3,a_36,Sketch,val,9
+3,a_4,Sketch,test,54
+3,a_5,Sketch,train,12
+3,a_6,Sketch,train,10
+3,a_7,Sketch,test,27
+3,a_8,Sketch,train,20
+3,a_9,Sketch,train,38
+3,b_1,Quick Sketch,train,41
+3,b_10,Quick Sketch,train,35
+3,b_11,Quick Sketch,train,27
+3,b_12,Quick Sketch,test,21
+3,b_13,Quick Sketch,train,29
+3,b_14,Quick Sketch,train,20
+3,b_15,Quick Sketch,test,12
+3,b_16,Quick Sketch,train,6
+3,b_17,Quick Sketch,train,20
+3,b_18,Quick Sketch,train,28
+3,b_19,Quick Sketch,val,13
+3,b_2,Quick Sketch,train,18
+3,b_20,Quick Sketch,train,49
+3,b_21,Quick Sketch,test,69
+3,b_22,Quick Sketch,train,51
+3,b_23,Quick Sketch,train,72
+3,b_24,Quick Sketch,val,64
+3,b_25,Quick Sketch,train,35
+3,b_26,Quick Sketch,val,36
+3,b_27,Quick Sketch,train,63
+3,b_28,Quick Sketch,train,72
+3,b_29,Quick Sketch,train,72
+3,b_3,Quick Sketch,train,24
+3,b_4,Quick Sketch,train,20
+3,b_5,Quick Sketch,test,20
+3,b_6,Quick Sketch,test,53
+3,b_7,Quick Sketch,test,35
+3,b_8,Quick Sketch,train,20
+3,b_9,Quick Sketch,train,20
+3,c_1,Color,train,49
+3,c_10,Color,test,19
+3,c_11,Color,val,75
+3,c_12,Color,train,27
+3,c_13,Color,train,12
+3,c_14,Color,train,26
+3,c_15,Color,test,20
+3,c_16,Color,val,28
+3,c_17,Color,train,19
+3,c_18,Color,train,20
+3,c_19,Color,train,10
+3,c_2,Color,train,13
+3,c_20,Color,train,30
+3,c_21,Color,test,41
+3,c_22,Color,train,25
+3,c_23,Color,train,52
+3,c_24,Color,train,47
+3,c_25,Color,train,70
+3,c_26,Color,train,73
+3,c_27,Color,train,70
+3,c_28,Color,train,35
+3,c_29,Color,test,27
+3,c_3,Color,train,7
+3,c_30,Color,test,68
+3,c_31,Color,train,50
+3,c_32,Color,test,71
+3,c_4,Color,val,32
+3,c_5,Color,train,20
+3,c_7,Color,train,35
+3,c_8,Color,train,132
+3,c_9,Color,val,46
+4,a_1,Sketch,val,52
+4,a_10,Sketch,train,23
+4,a_11,Sketch,val,10
+4,a_12,Sketch,train,37
+4,a_13,Sketch,train,9
+4,a_14,Sketch,train,45
+4,a_15,Sketch,test,20
+4,a_16,Sketch,val,16
+4,a_18,Sketch,train,38
+4,a_19,Sketch,train,13
+4,a_2,Sketch,train,25
+4,a_20,Sketch,test,29
+4,a_21,Sketch,train,21
+4,a_22,Sketch,train,20
+4,a_23,Sketch,val,10
+4,a_24,Sketch,test,10
+4,a_25,Sketch,train,37
+4,a_26,Sketch,train,53
+4,a_27,Sketch,train,62
+4,a_28,Sketch,test,55
+4,a_29,Sketch,train,63
+4,a_3,Sketch,train,14
+4,a_31,Sketch,train,35
+4,a_33,Sketch,train,71
+4,a_34,Sketch,train,72
+4,a_35,Sketch,test,56
+4,a_36,Sketch,train,9
+4,a_4,Sketch,train,54
+4,a_5,Sketch,train,12
+4,a_6,Sketch,train,10
+4,a_7,Sketch,train,27
+4,a_8,Sketch,train,20
+4,a_9,Sketch,test,38
+4,b_1,Quick Sketch,val,41
+4,b_10,Quick Sketch,train,35
+4,b_11,Quick Sketch,val,27
+4,b_12,Quick Sketch,train,21
+4,b_13,Quick Sketch,train,29
+4,b_14,Quick Sketch,test,20
+4,b_15,Quick Sketch,train,12
+4,b_16,Quick Sketch,train,6
+4,b_17,Quick Sketch,train,20
+4,b_18,Quick Sketch,train,28
+4,b_19,Quick Sketch,test,13
+4,b_2,Quick Sketch,train,18
+4,b_20,Quick Sketch,train,49
+4,b_21,Quick Sketch,train,69
+4,b_22,Quick Sketch,test,51
+4,b_23,Quick Sketch,train,72
+4,b_24,Quick Sketch,train,64
+4,b_25,Quick Sketch,test,35
+4,b_26,Quick Sketch,train,36
+4,b_27,Quick Sketch,train,63
+4,b_28,Quick Sketch,train,72
+4,b_29,Quick Sketch,test,72
+4,b_3,Quick Sketch,train,24
+4,b_4,Quick Sketch,train,20
+4,b_5,Quick Sketch,train,20
+4,b_6,Quick Sketch,train,53
+4,b_7,Quick Sketch,val,35
+4,b_8,Quick Sketch,test,20
+4,b_9,Quick Sketch,train,20
+4,c_1,Color,test,49
+4,c_10,Color,val,19
+4,c_11,Color,test,75
+4,c_12,Color,val,27
+4,c_13,Color,train,12
+4,c_14,Color,train,26
+4,c_15,Color,train,20
+4,c_16,Color,train,28
+4,c_17,Color,test,19
+4,c_18,Color,train,20
+4,c_19,Color,train,10
+4,c_2,Color,train,13
+4,c_20,Color,train,30
+4,c_21,Color,val,41
+4,c_22,Color,test,25
+4,c_23,Color,train,52
+4,c_24,Color,train,47
+4,c_25,Color,train,70
+4,c_26,Color,train,73
+4,c_27,Color,train,70
+4,c_28,Color,train,35
+4,c_29,Color,train,27
+4,c_3,Color,train,7
+4,c_30,Color,train,68
+4,c_31,Color,test,50
+4,c_32,Color,val,71
+4,c_4,Color,test,32
+4,c_5,Color,train,20
+4,c_7,Color,train,35
+4,c_8,Color,train,132
+4,c_9,Color,train,46
