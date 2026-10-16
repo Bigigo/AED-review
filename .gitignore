@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+outputs/
+cache/
+assets/*.pth
+assets/*.bin
+assets/*.tar
+assets/*.tar.gz
+assets/dinov2_repo/
+data/images/
+.venv/
+.DS_Store
+Thumbs.db
