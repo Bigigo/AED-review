@@ -13,6 +13,8 @@ AED contains 3,360 artworks from 93 examination groups across Sketch, Quick Sket
 
 - [results/seed_robustness/](results/seed_robustness/README.md): seed-specific results and fold-level variability.
 
+- [results/tied_scores/](results/tied_scores/README.md): tied-score statistics by group and category.
+
 ## Environment
 
 - Python 3.8
