@@ -1,0 +1,51 @@
+[
+  {
+    "file": "inception_resnet_v2_tf_in1k.bin",
+    "bytes": 224078439,
+    "sha256": "d47b5edf9f355ef395162258bd2eb0edb2710bf3711774de54d5f4a1d1fcfbdf",
+    "source": "https://huggingface.co/timm/inception_resnet_v2.tf_in1k/resolve/main/pytorch_model.bin"
+  },
+  {
+    "file": "mobilenet_v2-b0353104.pth",
+    "bytes": 14212972,
+    "sha256": "b03531047ffacf1e2488318dcd2aba1126cde36e3bfe1aa5cb07700aeeee9889",
+    "source": "https://download.pytorch.org/models/mobilenet_v2-b0353104.pth"
+  },
+  {
+    "file": "resnet18-f37072fd.pth",
+    "bytes": 46830571,
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "source": "https://download.pytorch.org/models/resnet18-f37072fd.pth"
+  },
+  {
+    "file": "resnet18_places365.pth.tar",
+    "bytes": 45506139,
+    "sha256": "2f4759217d470da2b803f8f66cd4488a066406b555a5fb95ee9a4663f9f05588",
+    "source": "http://places2.csail.mit.edu/models_places365/resnet18_places365.pth.tar"
+  },
+  {
+    "file": "resnet50-0676ba61.pth",
+    "bytes": 102530333,
+    "sha256": "0676ba61b6795bbe1773cffd859882e5e297624d384b6993f7c9e683e722fb8a",
+    "source": "https://download.pytorch.org/models/resnet50-0676ba61.pth"
+  },
+  {
+    "file": "saan_baid_pretrain.pth",
+    "bytes": 94598403,
+    "sha256": "ec1ad4fde349f9aa95966553d51eaf036a801d7bc3996a4935c84b2918c1b490",
+    "source": "https://drive.google.com/file/d/13aPiVT4xyu2w5VUwt6vDMJY1n2hXHKWc/view"
+  },
+  {
+    "file": "vgg19_relu4_1_imagenet.pth",
+    "bytes": 14028970,
+    "sha256": "f8e613b89bc23510ed52fab65f5ecd206a645d60ab11c62c406deb925388168d",
+    "source": "https://download.pytorch.org/models/vgg19-dcbb9e9d.pth (features[:21] tensors exported locally)",
+    "tensor_sha256": "63038a4840ea73682391ea9642441297d83c356106c98335e8a2469d442614c8"
+  },
+  {
+    "file": "dinov2_vits14_pretrain.pth",
+    "bytes": 88283115,
+    "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+    "source": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth"
+  }
+]
