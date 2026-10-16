@@ -11,6 +11,8 @@ AED contains 3,360 artworks from 93 examination groups across Sketch, Quick Sket
 - `evaluate.py`: performance evaluation.
 - `THIRD_PARTY.md`, `licenses/`: sources and licence notices.
 
+- [results/seed_robustness/](results/seed_robustness/README.md): seed-specific results and fold-level variability.
+
 ## Environment
 
 - Python 3.8
