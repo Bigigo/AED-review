@@ -1,0 +1,27 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "epochs": 80,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "fused": true,
+  "scheduler": "CosineAnnealingLR",
+  "eta_min": 1e-06,
+  "amp": true,
+  "workers": 6,
+  "prefetch_factor": 2,
+  "image_batch": 0,
+  "checkpoint": "final80",
+  "save_weights": false
+}
