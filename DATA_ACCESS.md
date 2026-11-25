@@ -1,6 +1,6 @@
 # Dataset access
 
-This code repository contains score labels and fixed group partitions. The original image archive is distributed separately; its review download link will be added here.
+This repository contains score labels and fixed group partitions. The original image archive is distributed separately.
 
 After downloading the image archive, extract it before running preprocessing. Set `--image-root` to the extracted directory containing the JPEG files. The image archive is supplied unchanged.
 

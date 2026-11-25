@@ -1,8 +1,6 @@
 # Seed and fold variability
 
-This directory preserves the final-epoch-80 outer-test results reported in the submitted sensitivity analysis. The layer-combination rows are retained as a historical sensitivity record and are not part of the revised validation-only configuration table. New layer-configuration runs are validation-only, as described in the repository root README.
-
-Results use seeds 0, 1 and 2 and the same five group-disjoint test folds.
+Final-epoch-80 outer-test sensitivity results for seeds 0, 1 and 2 use the same five group-disjoint folds.
 
 - [Seed-specific means and fold standard deviations](seed_metrics_and_fold_std.csv)
 - [Means and standard deviations across seeds](model_seed_summary.csv)

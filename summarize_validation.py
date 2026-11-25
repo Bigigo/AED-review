@@ -57,7 +57,7 @@ def main():
     per_run.to_csv(args.output / 'validation_seed_fold_final80.csv', index=False)
     per_seed.to_csv(args.output / 'validation_per_seed_final80.csv', index=False)
     summary.to_csv(args.output / 'validation_summary_final80.csv', index=False)
-    print('INTERNAL VALIDATION ONLY; only the 60 expected history.csv files were read.')
+    print('Internal-validation summary from 60 history files:')
     print(summary.to_string(index=False))
 
 

@@ -22,8 +22,8 @@ The adapter follows [BAID/SAAN](https://github.com/Dreemurr-T/BAID/tree/d5c9b8cd
 
 ## HLA-GCN
 
-The PyTorch adapter follows the equations in the [authors' Jittor implementation](https://github.com/shedy-pub/hlagcn-jittor/tree/5ee74a3f9222fa330979242516530521a766fefe). It uses an ImageNet ResNet50, three coordinate graph blocks, 25 latent nodes, and two ten-bin outputs. At 224x224 input, the coordinate grid is 7x7. The original reported grid/input and training recipe are not silently substituted for the supplied AED settings.
+The PyTorch adapter follows the equations in the [authors' Jittor implementation](https://github.com/shedy-pub/hlagcn-jittor/tree/5ee74a3f9222fa330979242516530521a766fefe). It uses an ImageNet ResNet50, three coordinate graph blocks, 25 latent nodes, and two ten-bin outputs. At 224x224 input, the coordinate grid is 7x7. The AED experiments use the training settings supplied in this repository.
 
 ## Distribution
 
-Upstream author names, source links, licence texts and copyright notices are attribution, not identifying information about this submission. They must be retained. The absence of a separate upstream licence in a source snapshot must not be interpreted as a blanket permission to redistribute that upstream project or its data. Pretrained weights and original upstream repositories are not embedded in this code package.
+Upstream author names, source links, licence texts and copyright notices are retained for attribution. Pretrained weights and original upstream repositories are not embedded in this package. Redistribution of upstream projects or data remains subject to their licence terms.
