@@ -8,6 +8,14 @@ from metrics import group_metrics
 
 METRICS = ('srcc', 'plcc', 'pair_acc')
 KEYS = ['seed', 'fold', 'group']
+CONFIGURATION_VARIANTS = frozenset(('gap1', 'gap2', 'gap3', 'gap4'))
+
+
+def validate_final_models(groups):
+    variants = sorted(CONFIGURATION_VARIANTS.intersection(groups.model.astype(str)))
+    if variants:
+        raise ValueError('Layer-configuration candidates cannot enter outer-test summaries: %s. '
+                         'Summarize only the fixed model name mlvs.' % ', '.join(variants))
 
 
 def bootstrap(groups, metric, iterations=50000):
@@ -107,6 +115,7 @@ def main():
         raise FileExistsError('Choose a new output directory')
     labels = pd.read_csv(args.labels, dtype={'filename': str, 'group': str})
     groups = pd.concat([pd.read_csv(p, dtype={'group': str}) for p in args.groups], ignore_index=True) if args.groups else from_predictions(args.predictions, labels)
+    validate_final_models(groups)
     if not (groups.epoch.eq(80) | (groups.model.eq('ridge') & groups.epoch.isna())).all():
         raise ValueError('Only final80 neural results and VAL-selected Ridge fits belong in this table')
     groups['model'] = groups.model + np.where(groups.condition.eq('normal'), '', '_' + groups.condition)

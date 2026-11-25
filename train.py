@@ -18,9 +18,17 @@ from references import make_bank, wrong_group
 from dino_models import LAYERS
 
 
-def frames_for(frame, roles, fold):
+def validate_test_request(names, evaluate_test):
+    variants = sorted(models.CONFIGURATION_VARIANTS.intersection(names))
+    if evaluate_test and variants:
+        raise ValueError('Layer-configuration variants are internal-validation-only: %s. '
+                         'Use model mlvs for the fixed final outer-test evaluation.' % ', '.join(variants))
+
+
+def frames_for(frame, roles, fold, include_test=False):
     mapping = roles[roles.outer_fold == fold].set_index('group').role
-    return {role: frame[frame.group.map(mapping) == role].copy() for role in ('train', 'val', 'test')}
+    selected = ('train', 'val', 'test') if include_test else ('train', 'val')
+    return {role: frame[frame.group.map(mapping) == role].copy() for role in selected}
 
 
 def train_neural(name, seed, fold, frames, args, protocol):
@@ -72,12 +80,15 @@ def train_neural(name, seed, fold, frames, args, protocol):
             train_seconds=train_seconds, **{'val_' + k: v for k, v in metrics.items()}))
         pd.DataFrame(history).to_csv(directory / 'history.csv', index=False)
         print(f'{name} seed={seed} fold={fold} epoch={epoch}/80 VAL_SRCC={metrics["srcc"]:.6f}', flush=True)
-    state = {key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
+    state = ({key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
+             if args.evaluate_test else None)
     save_json(directory / 'training_complete.json', dict(epoch=80, save_weights=False,
         best_val_epoch=best_epoch, test_evaluated=False))
     del model, optimizer, scheduler, scaler, train_loader, val_loader
     gc.collect()
     torch.cuda.empty_cache()
+    if not args.evaluate_test:
+        return None
     return dict(model=name, seed=seed, fold=fold, state=state, frames=frames,
                 directory=directory, reference=reference, bank=bank, reference_identity=identity)
 
@@ -95,6 +106,9 @@ def mismatched_batches(loader, model, bank, sizes, selected):
 
 def test_neural(job, args):
     name, seed, fold = job['model'], job['seed'], job['fold']
+    validate_test_request([name], True)
+    if 'test' not in job['frames']:
+        raise RuntimeError('Outer-test data were not attached to this fixed-model run')
     runtime.configure_execution(seed)
     model = models.build(name, args.assets, initialize=False, reference=job['reference']).to('cuda', memory_format=torch.channels_last)
     model.load_state_dict(job.pop('state'), strict=True)
@@ -132,12 +146,14 @@ def main():
     parser.add_argument('--models', nargs='+', choices=list(models.PARAMETERS) + ['ridge'], default=['mlvs'])
     parser.add_argument('--seeds', nargs='+', type=int, choices=[0,1,2], default=[0,1,2])
     parser.add_argument('--folds', nargs='+', type=int, choices=range(5), default=list(range(5)))
+    parser.add_argument('--evaluate-test', action='store_true')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError('Choose a new output directory')
     if any(len(x) != len(set(x)) for x in (args.models, args.seeds, args.folds)):
         raise ValueError('Duplicate models, seeds or folds')
+    validate_test_request(args.models, args.evaluate_test)
     if not torch.cuda.is_available() and any(name != 'ridge' for name in args.models):
         raise RuntimeError('The neural training protocol requires CUDA')
     frame = common.prepare_data(args.csv, args.image_root)
@@ -147,26 +163,31 @@ def main():
     protocol = read_json(Path(__file__).parent / 'configs/protocol.json')
     args.output.mkdir(parents=True)
     save_json(args.output / 'experiment.json', dict(models=args.models, seeds=args.seeds, folds=args.folds,
-        protocol=protocol, cache_identity=cache, torch=str(torch.__version__), primary='final80'))
+        protocol=protocol, cache_identity=cache, torch=str(torch.__version__), primary='final80',
+        evaluation_scope='outer_test' if args.evaluate_test else 'internal_validation_only'))
     pending, ridge_jobs = [], []
     for name in args.models:
         if name == 'ridge':
             import ridge
             features = np.load(args.cache / 'cls.npy', mmap_mode='r')
             for fold in args.folds:
-                frames = frames_for(frame, roles, fold)
+                frames = frames_for(frame, roles, fold, include_test=args.evaluate_test)
                 fit, selection = ridge.choose(frames['train'], frames['val'], features)
                 directory = args.output / 'ridge' / f'fold_{fold}'
                 directory.mkdir(parents=True)
                 selection.to_csv(directory / 'validation_alpha.csv', index=False)
                 save_json(directory / 'config.json', dict(alpha=fit['alpha'], fit_sha256=ridge.digest(fit),
                     independent_fits=1, seeds_are_repeat_labels=True, split_fold=fold))
-                ridge_jobs.append((fold, frames, fit, directory))
+                if args.evaluate_test:
+                    ridge_jobs.append((fold, frames, fit, directory))
             del features
         else:
             for seed in args.seeds:
                 for fold in args.folds:
-                    pending.append(train_neural(name, seed, fold, frames_for(frame, roles, fold), args, protocol))
+                    frames = frames_for(frame, roles, fold, include_test=args.evaluate_test)
+                    job = train_neural(name, seed, fold, frames, args, protocol)
+                    if job is not None:
+                        pending.append(job)
     all_groups = []
     for job in pending:
         all_groups.extend(test_neural(job, args))
@@ -182,9 +203,12 @@ def main():
                 groups.to_csv(directory / f'seed_{seed}_test_groups.csv', index=False)
                 predictions.to_csv(directory / f'seed_{seed}_test_predictions.csv', index=False)
                 all_groups.append(groups)
-    pd.concat(all_groups, ignore_index=True).to_csv(args.output / 'all_test_groups.csv', index=False)
-    save_json(args.output / 'complete.json', dict(primary='final80', test_after_all_selected_training=True,
-        save_weights=False, models=args.models, seeds=args.seeds, folds=args.folds))
+    if args.evaluate_test:
+        pd.concat(all_groups, ignore_index=True).to_csv(args.output / 'all_test_groups.csv', index=False)
+    save_json(args.output / 'complete.json', dict(primary='final80',
+        test_after_all_selected_training=args.evaluate_test, test_evaluated=args.evaluate_test,
+        validation_only=not args.evaluate_test, save_weights=False,
+        models=args.models, seeds=args.seeds, folds=args.folds))
     print('Completed:', args.output)
 
 

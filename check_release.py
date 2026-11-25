@@ -46,8 +46,10 @@ def numerical_check(cuda=False):
     import torch
     import models
     import runtime
+    import summarize_validation
+    import train
     torch.set_num_threads(2)
-    from evaluate import bootstrap
+    from evaluate import bootstrap, validate_final_models
     from losses import listnet_loss, ranknet_loss
     from metrics import group_metrics, midrank_targets
     assert np.allclose(midrank_targets([1,1,2,3]), [1/6,1/6,2/3,1])
@@ -56,6 +58,35 @@ def numerical_check(cuda=False):
     assert group_metrics(np.arange(4), np.zeros(4))['pair_acc'] == 0
     assert np.isnan(group_metrics(np.arange(4), np.zeros(4))['srcc'])
     assert np.array_equal(bootstrap(pd.DataFrame({'fold':[0,0,1], 'srcc':[0.,0.,0.]}), 'srcc', 100), [0.,0.])
+    train.validate_test_request(['gap1', 'gap2', 'gap3', 'gap4'], False)
+    train.validate_test_request(['mlvs'], True)
+    frame = pd.DataFrame({'group':['a','b','c'], 'value':[1,2,3]})
+    roles = pd.DataFrame({'outer_fold':[0,0,0], 'group':['a','b','c'],
+                          'role':['train','val','test']})
+    assert set(train.frames_for(frame, roles, 0)) == {'train','val'}
+    assert set(train.frames_for(frame, roles, 0, include_test=True)) == {'train','val','test'}
+    validate_final_models(pd.DataFrame({'model':['mlvs','baseline']}))
+    try:
+        train.validate_test_request(['gap1'], True)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Layer candidates must not enter outer-test evaluation')
+    try:
+        validate_final_models(pd.DataFrame({'model':['gap3']}))
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Layer candidates must not enter standalone outer-test summaries')
+    rows = []
+    for variant in summarize_validation.VARIANTS:
+        layers, parameters = summarize_validation.VARIANTS[variant]
+        for seed in range(3):
+            for fold in range(5):
+                rows.append(dict(variant=variant, layers='+'.join(map(str, layers)), parameters=parameters,
+                                 seed=seed, fold=fold, srcc=.1, plcc=.2, pair_acc=.3))
+    _, _, validation_summary = summarize_validation.aggregate(rows)
+    assert len(validation_summary) == 4 and np.allclose(validation_summary.srcc_mean, .1)
     for name in ('baseline','mlvs','gap1','gap2','gap4','group_mean','fixed_reference','nima','mlsp','tanet','saan','hla_gcn'):
         model = models.build(name, Path('assets'), initialize=False, reference=np.zeros(384, dtype=np.float32))
         assert sum(p.numel() for p in model.parameters() if p.requires_grad) == models.PARAMETERS[name]

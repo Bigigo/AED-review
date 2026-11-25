@@ -10,6 +10,7 @@ from iaa_models import registry
 from losses import listnet_loss, ranknet_loss
 
 DINO = ('mlvs', 'gap1', 'gap2', 'gap3', 'gap4', 'baseline', 'pairwise', 'listwise', 'group_mean', 'fixed_reference')
+CONFIGURATION_VARIANTS = frozenset(('gap1', 'gap2', 'gap3', 'gap4'))
 IAA = ('nima', 'mlsp', 'tanet', 'saan', 'hla_gcn')
 FEATURE = dict(registry.FEATURE)
 PARAMETERS = {'mlvs': 12229833, 'gap1': 9870537, 'gap2': 11050185,
