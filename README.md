@@ -11,6 +11,10 @@ AED contains 3,360 artworks from 93 examination groups across Sketch, Quick Sket
 - `evaluate.py`: performance evaluation.
 - `THIRD_PARTY.md`, `licenses/`: sources and licence notices.
 
+- [results/seed_robustness/](results/seed_robustness/README.md): seed-specific results and fold-level variability.
+
+- [results/tied_scores/](results/tied_scores/README.md): tied-score statistics by group and category.
+
 ## Layer-configuration validation
 
 The layer combinations `gap1`, `gap2`, `gap3`, and `gap4` are configuration candidates. They are restricted to internal-validation training and reporting. The command below writes per-epoch validation histories and does not evaluate or write outer-test predictions:
